@@ -2,9 +2,10 @@
 #include "debug.h"
 #include "action_layer.h"
 
-#define BASE 0 // default layer
-#define MOVEMENT 1 // symbols
-#define GAMES 2 // media keys
+#define BASE 0
+#define GAMES 1
+#define ACCENTS 2
+#define MOVEMENT 3
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
