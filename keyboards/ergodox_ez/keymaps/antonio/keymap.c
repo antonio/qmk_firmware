@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
  *                                 |LGui  |MOVMNT|------|       |------| Enter  | Space|
- *                                 |Space |      |      |       |      |        |      |
+ *                                 |      |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -52,7 +52,7 @@ KC_NO,          KC_NO,  KC_NO,  LCTL(S(KC_TAB)),  KC_LALT,
 
                                                     KC_NO,  TG(GAMES),
                                                                 KC_NO,
-                                  GUI_T(KC_SPACE), MO(MOVEMENT), KC_NO,
+                                         KC_LGUI, MO(MOVEMENT), KC_NO,
 
                                                              // right hand
                                                              KC_7,        KC_8,           KC_9,   KC_0,   KC_MINS,  KC_EQUAL, KC_BSPC,
