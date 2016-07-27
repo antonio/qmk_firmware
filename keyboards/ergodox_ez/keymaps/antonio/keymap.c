@@ -239,7 +239,7 @@ KC_NO,          KC_NO,  KC_NO,  LCTL(S(KC_TAB)),  KC_LALT,
                                                                 // right hand
                                                                ,KC_F7   ,KC_F8   ,KC_F9   ,KC_F10,  KC_F11  ,KC_F12  ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                        ,KC_TRNS ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RIGHT,KC_TRNS
+                                                                        ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RIGHT,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                                  ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
 
