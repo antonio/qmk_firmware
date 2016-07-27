@@ -59,7 +59,7 @@ KC_NO,          KC_NO,  KC_NO,  LCTL(S(KC_TAB)),  KC_LALT,
                                                              KC_RBRC,     KC_Y,           KC_U,   KC_I,   KC_O,     KC_P,            KC_BSLS,
                                                              KC_H,        KC_J,           KC_K,   KC_L,   KC_SCLN,  CTL_T(KC_QUOT),
                                                              KC_NO,       KC_N,           KC_M,   KC_COMM,KC_DOT,   KC_SLSH,         KC_RSPC,
-                                                             TG(ACCENTS), LCTL(KC_TAB),   KC_NO,  KC_NO,  KC_NO,
+                                                             MO(ACCENTS), LCTL(KC_TAB),   KC_NO,  KC_NO,  KC_NO,
 
                                                              KC_NO,       KC_NO,
                                                              KC_NO,
