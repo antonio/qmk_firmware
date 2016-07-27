@@ -226,7 +226,7 @@ KC_NO,          KC_NO,  KC_NO,  LCTL(S(KC_TAB)),  KC_LALT,
 
 [MOVEMENT] = KEYMAP(
 // left hand
- RESET,  ,KC_F1      ,KC_F2     ,KC_F3      ,KC_F4      ,KC_F5      ,KC_F6
+ RESET   ,KC_F1      ,KC_F2     ,KC_F3      ,KC_F4      ,KC_F5      ,KC_F6
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
