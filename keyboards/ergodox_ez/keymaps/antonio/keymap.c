@@ -77,7 +77,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
  * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      | LGUI |      |                                       |      |      |      |      |      |
+ *      |      |      |      | LGUI |MVMNT |                                       |      |      |      |      |      |
  *      `----------------------------------'                                       `----------------------------------'
  *                                         ,-------------.           ,-------------.
  *                                         |      | BASE |           |      |      |
@@ -94,7 +94,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_LGUI    ,KC_TRNS
+,KC_TRNS ,KC_TRNS   ,KC_TRNS   ,KC_LGUI    ,MO(MOVEMENT)
 
                                              ,KC_TRNS ,KC_TRNS
                                                       ,KC_TRNS
