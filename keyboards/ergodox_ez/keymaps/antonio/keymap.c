@@ -75,9 +75,9 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
  * |           |      |      |      |      |      |------|           |------|      |      |      |      |      |           |
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
+ * |           |      |      |      |      |      |      |           |      |      |      |      |      |  UP  |           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      | LGUI |MVMNT |                                       |      |      |      |      |      |
+ *      |      |      |      | LGUI |MVMNT |                                       |      |      | LEFT | DOWN | RIGHT|
  *      `----------------------------------'                                       `----------------------------------'
  *                                         ,-------------.           ,-------------.
  *                                         |      | BASE |           |      |      |
@@ -104,8 +104,8 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                         ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                                 ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_UP   ,KC_TRNS
+                                                                                 ,KC_TRNS ,KC_TRNS ,KC_LEFT ,KC_DOWN ,KC_RIGHT
 
                                                                ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS
