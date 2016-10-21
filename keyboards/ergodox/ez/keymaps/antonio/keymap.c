@@ -1,6 +1,7 @@
-#include "ergodox_ez.h"
+#include "ergodox.h"
 #include "debug.h"
 #include "action_layer.h"
+#include "version.h"
 
 #define BASE 0
 #define GAMES 1
@@ -9,16 +10,17 @@
 #define MOVEMENT 4
 #define TRANS 19
 
-#define ACC_A M(0)
-#define ACC_E M(1)
-#define ACC_I M(2)
-#define ACC_O M(3)
-#define ACC_U M(4)
-#define DIE_U M(5)
+enum {
+  ACC_A = 0,
+  ACC_E,
+  ACC_I,
+  ACC_O,
+  ACC_U,
+  DIE_U
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * TODO: gaming layer, vim movement layers, accents modifier
  * Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
@@ -75,9 +77,9 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
  * |           |      |      |      |      |      |------|           |------|      |      |      |      |      |           |
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |  UP  |           |
+ * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
  * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      | LGUI |MVMNT |                                       |      |      | LEFT | DOWN | RIGHT|
+ *      |      |      |      | LGUI |MVMNT |                                       |      |      |      |      |      |
  *      `----------------------------------'                                       `----------------------------------'
  *                                         ,-------------.           ,-------------.
  *                                         |      | BASE |           |      |      |
@@ -104,12 +106,12 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                         ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_UP   ,KC_TRNS
-                                                                                 ,KC_TRNS ,KC_TRNS ,KC_LEFT ,KC_DOWN ,KC_RIGHT
+                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                                                 ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
 
                                                                ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                               ,X(0x00C1) ,KC_TRNS ,KC_TRNS // TODO Remove unicode test
                  ),
 
 /* Keymap 2: Spanish accents (1)
@@ -137,8 +139,8 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 [ACCENTS] = KEYMAP(
 // left hand
  KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,ACC_E      ,KC_TRNS    ,KC_TRNS
-,ACC_A   ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,M(ACC_E)   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
+,KC_TRNS ,M(ACC_A)   ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
 ,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,MO(ACCENTSX)
 
@@ -148,7 +150,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                                 // right hand
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,ACC_U   ,ACC_I   ,ACC_E   ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_TRNS ,M(ACC_U),M(ACC_I),M(ACC_O)   ,KC_TRNS ,KC_TRNS
                                                                         ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                                  ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
@@ -193,7 +195,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                                 // right hand
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,DIE_U   ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
+                                                               ,KC_TRNS ,KC_TRNS ,M(DIE_U),KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                         ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                                  ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
@@ -299,14 +301,17 @@ const uint16_t PROGMEM fn_actions[] = {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
-  // MACRODOWN only works in this function
-      switch(id) {
-        case 0:
-        if (record->event.pressed) {
-          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-        }
-        break;
-      }
+    /* switch(id) { */
+    /* case ACC_A: */
+    /*   if (record->event.pressed) { */
+    /*     if (keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT))) { */
+    /*       register_code(UC(0x00C1)); */
+    /*     } else { */
+    /*       register_code(UC(0x00E1)); */
+    /*     } */
+    /*   } */
+    /*   break; */
+    /* } */
     return MACRO_NONE;
 };
 
