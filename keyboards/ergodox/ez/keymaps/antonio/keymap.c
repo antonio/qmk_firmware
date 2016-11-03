@@ -19,6 +19,17 @@ enum {
   DIE_U
 };
 
+//Tap Dance Declarations
+enum {
+  TD_GUI_HYPER = 0
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Esc, twice for Caps Lock
+  [TD_GUI_HYPER]  = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_HYPR)
+  // Other declarations would go here, separated by commas, if you have them
+};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Keymap 0: Basic layer
@@ -30,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  ;:  |Ctrl/'" |
  * |--------+------+------+------+------+------|   (  |           |   )  |------+------+------+------+------+--------|
- * |LShift/(|   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |  ,<  |  .>  |  /?  |RShift/)|
+ * |LShift  |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |  ,<  |  .>  |  /?  |RShift  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      | LAlt |                                       |ACCNTS|      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -38,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |GAMES |       |      |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 |LGui  |MOVMNT|------|       |------| Enter  | Space|
- *                                 |      |      |      |       |      |        |      |
+ *                                 |LGui/ |MOVMNT|------|       |------| Enter  | Space|
+ *                                 |Hyper |      |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -54,7 +65,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                     KC_NO,  TG(GAMES),
                                                                 KC_NO,
-                                         KC_LGUI, MO(MOVEMENT), KC_NO,
+                                                    TD(TD_GUI_HYPER), MO(MOVEMENT), KC_NO,
 
                                                              // right hand
                                                              KC_7,        KC_8,           KC_9,   KC_0,   KC_MINS,  KC_EQUAL, KC_BSPC,
