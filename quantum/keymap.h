@@ -53,6 +53,7 @@ enum quantum_keycodes {
     QK_LSFT               = 0x0200,
     QK_LALT               = 0x0400,
     QK_LGUI               = 0x0800,
+    QK_RMODS_MIN          = 0x1000,
     QK_RCTL               = 0x1100,
     QK_RSFT               = 0x1200,
     QK_RALT               = 0x1400,
@@ -177,6 +178,10 @@ enum quantum_keycodes {
 
     // Right shift, close paren
     KC_RSPC,
+
+    // Printing
+    PRINT_ON,
+    PRINT_OFF,
 
     // always leave at the end
     SAFE_RANGE
