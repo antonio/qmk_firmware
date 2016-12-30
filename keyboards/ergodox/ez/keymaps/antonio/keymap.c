@@ -218,7 +218,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 /* Keymap 4: Vim-like movement, media and Fn keys
  *
  * ,-----------------------------------------------------.           ,-----------------------------------------------------.
- * |   RESET   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  | F10  | F11  | F12  |           |
+ * |   RESET   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  | F10  | F11  | F12  |  Delete   |
  * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
  * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
  * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
@@ -250,7 +250,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
                                     ,KC_TRNS ,KC_TRNS ,KC_TRNS
 
                                                                 // right hand
-                                                               ,KC_F7   ,KC_F8   ,KC_F9   ,KC_F10,  KC_F11  ,KC_F12  ,KC_TRNS
+                                                               ,KC_F7   ,KC_F8   ,KC_F9   ,KC_F10,  KC_F11  ,KC_F12  ,KC_DEL
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
                                                                         ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RIGHT,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
