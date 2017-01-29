@@ -49,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |GAMES |       |      |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 |LGui/ |MOVMNT|------|       |------| Enter  | Space|
- *                                 |Hyper |      |      |       |      |        |      |
+ *                                 |LGui  |MOVMNT|------|       |------| Enter  | Space|
+ *                                 |      |      |      |       |      |        | Hyper|
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -65,7 +65,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                     KC_NO,  TG(GAMES),
                                                                 KC_NO,
-                                                    TD(TD_GUI_HYPER), MO(MOVEMENT), KC_NO,
+                                                    KC_LGUI, MO(MOVEMENT), KC_NO,
 
                                                              // right hand
                                                              KC_7,        KC_8,           KC_9,   KC_0,   KC_MINS,  KC_EQUAL, KC_BSPC,
@@ -76,7 +76,7 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                              KC_NO,       KC_NO,
                                                              KC_NO,
-                                                             KC_NO,       KC_ENT,         KC_SPC
+                                                             KC_NO,       KC_ENT,         ALL_T(KC_SPC)
     ),
 
 /* Keymap 1: Gaming layer
