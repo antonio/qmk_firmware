@@ -43,14 +43,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|   (  |           |   )  |------+------+------+------+------+--------|
  * |LShift  |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |  ,<  |  .>  |  /?  |RShift  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      | LAlt |                                       |ACCNTS|      |      |      |      |
+ *   |      |      |      |      | LAlt |                                       |  F18 |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |GAMES |       |      |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
  *                                 |LGui  |MOVMNT|------|       |------| Enter  | Space|
- *                                 |      |      |      |       |      |        | Hyper|
+ *                                 |      |      | F18  |       | F18  |        | Hyper|
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -65,18 +65,18 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
 
                                                     KC_NO,  TG(GAMES),
                                                                 KC_NO,
-                                                    KC_LGUI, MO(MOVEMENT), KC_NO,
+                                                    KC_LGUI, MO(MOVEMENT), KC_F18,
 
                                                              // right hand
                                                              KC_7,        KC_8,           KC_9,   KC_0,   KC_MINS,  KC_EQUAL, KC_BSPC,
                                                              KC_RBRC,     KC_Y,           KC_U,   KC_I,   KC_O,     KC_P,            KC_BSLS,
                                                              KC_H,        KC_J,           KC_K,   KC_L,   KC_SCLN,  CTL_T(KC_QUOT),
-                                                             KC_RPRN,       KC_N,           KC_M,   KC_COMM,KC_DOT,   KC_SLSH,       KC_RSFT,
-                                                             MO(ACCENTS), KC_NO,   KC_NO,  KC_NO,  KC_NO,
+                                                             KC_RPRN,     KC_N,           KC_M,   KC_COMM,KC_DOT,   KC_SLSH,       KC_RSFT,
+                                                             KC_F18,      KC_NO,   KC_NO,  KC_NO,  KC_NO,
 
                                                              KC_NO,       KC_NO,
                                                              KC_NO,
-                                                             KC_NO,       KC_ENT,         ALL_T(KC_SPC)
+                                                             KC_F18,      KC_ENT,         ALL_T(KC_SPC)
     ),
 
 /* Keymap 1: Gaming layer
@@ -123,99 +123,9 @@ KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_LALT,
                                                                ,KC_TRNS ,KC_TRNS
                                                                ,KC_TRNS
                                                                ,X(0x00C1) ,KC_TRNS ,KC_TRNS // TODO Remove unicode test
-                 ),
+),
 
-/* Keymap 2: Spanish accents (1)
- *
- * ,-----------------------------------------------------.           ,-----------------------------------------------------.
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
- * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
- * |           |      |      |  É   |      |      |      |           |      |      |  Ú   |  Í   |  Ó   |      |           |
- * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |  Á   |      |      |      |      |------|           |------|      |      |      |      |      |           |
- * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
- * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      |      |ACCNT2|                                       |      |      |      |      |      |
- *      `----------------------------------'                                       `----------------------------------'
- *                                         ,-------------.           ,-------------.
- *                                         |      |      |           |      |      |
- *                                  ,------|------|------|           |------+------+------.
- *                                  |      |      |      |           |      |      |      |
- *                                  |      |      |------|           |------|      |      |
- *                                  |      |      |      |           |      |      |      |
- *                                  `--------------------'           `--------------------'
- */
-
-[ACCENTS] = KEYMAP(
-// left hand
- KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,M(ACC_E)   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,M(ACC_A)   ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,MO(ACCENTSX)
-
-                                             ,KC_TRNS ,KC_TRNS
-                                                      ,KC_TRNS
-                                    ,KC_TRNS ,KC_TRNS ,KC_TRNS
-
-                                                                // right hand
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,M(ACC_U),M(ACC_I),M(ACC_O)   ,KC_TRNS ,KC_TRNS
-                                                                        ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                                 ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-
-                                                               ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS
-    ),
-/* Keymap 3: Spanish accents (2)
- *
- * ,-----------------------------------------------------.           ,-----------------------------------------------------.
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
- * |-----------+------+------+------+------+-------------|           |------+------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |      |           |      |      |      |  Ü   |      |      |           |
- * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |------|           |------|      |      |      |      |      |           |
- * |-----------+------+------+------+------+------|      |           |      |------+------+------+------+------+-----------|
- * |           |      |      |      |      |      |      |           |      |      |      |      |      |      |           |
- * `-----------+------+------+------+------+-------------'           `-------------+------+------+------+------+-----------'
- *      |      |      |      |      |      |                                       |      |      |      |      |      |
- *      `----------------------------------'                                       `----------------------------------'
- *                                         ,-------------.           ,-------------.
- *                                         |      |      |           |      |      |
- *                                  ,------|------|------|           |------+------+------.
- *                                  |      |      |      |           |      |      |      |
- *                                  |      |      |------|           |------|      |      |
- *                                  |      |      |      |           |      |      |      |
- *                                  `--------------------'           `--------------------'
- */
-
-[ACCENTSX] = KEYMAP(
-// left hand
- KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS    ,KC_TRNS    ,KC_TRNS
-,KC_TRNS ,KC_TRNS    ,KC_TRNS   ,KC_TRNS    ,KC_TRNS
-
-                                             ,KC_TRNS ,KC_TRNS
-                                                      ,KC_TRNS
-                                    ,KC_TRNS ,KC_TRNS ,KC_TRNS
-
-                                                                // right hand
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,M(DIE_U),KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                        ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                                                                                 ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS
-
-                                                               ,KC_TRNS ,KC_TRNS
-                                                               ,KC_TRNS
-                                                               ,KC_TRNS ,KC_TRNS ,KC_TRNS
-                    ),
-/* Keymap 4: Vim-like movement, media and Fn keys
+/* Keymap 2: Vim-like movement, media and Fn keys
  *
  * ,-----------------------------------------------------.           ,-----------------------------------------------------.
  * |   RESET   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  | F10  | F11  | F12  |  Delete   |
@@ -312,17 +222,8 @@ const uint16_t PROGMEM fn_actions[] = {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
-    /* switch(id) { */
-    /* case ACC_A: */
-    /*   if (record->event.pressed) { */
-    /*     if (keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT))) { */
-    /*       register_code(UC(0x00C1)); */
-    /*     } else { */
-    /*       register_code(UC(0x00E1)); */
-    /*     } */
-    /*   } */
-    /*   break; */
-    /* } */
+    switch(id) {
+    }
     return MACRO_NONE;
 };
 
